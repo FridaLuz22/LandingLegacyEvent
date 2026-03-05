@@ -42,7 +42,7 @@ export default function Countdown() {
   if (!timeLeft) return null;
 
   return (
-    <div className="flex items-center py-4 justify-center border-b border-blue-500 bg-black">
+    <div className="flex items-center mt-9 py-4 px-8 justify-center border border-gray-400 rounded-3xl shadow-lg">
       {["Días", "Horas", "Mins", "Segs"].map((label, i) => {
         const value = [
           timeLeft.days,
@@ -54,16 +54,14 @@ export default function Countdown() {
         return (
           <div key={label} className="flex items-center gap-2">
             <div className="text-center">
-              <div className="text-4xl md:text-8xl font-bold 
-    bg-gradient-to-r from-blue-600 via-white to-blue-600
-    bg-clip-text text-transparent">
+              <div className="text-2xl md:text-8xl font-bold text-white">
                 {value}
               </div>
               <div className="text-sm text-white">{label}</div>
             </div>
 
             {i < 3 && (
-              <span className="mx-3 text-4xl font-bold text-blue-600 md:text-8xl">
+              <span className="mx-3 text-2xl font-bold text-white md:text-8xl">
                 :
               </span>
             )}
