@@ -7,10 +7,10 @@ export default function Footer() {
 
         {/* NAV LINKS */}
         <div className="flex flex-wrap justify-center gap-6 text-sm tracking-wide">
-          <a href="#inicio" className="hover:text-cyan-300 transition">Inicio</a>
-          <a href="#expositores" className="hover:text-cyan-300 transition">Expositores</a>
-          <a href="#banda" className="hover:text-cyan-300 transition">Banda</a>
-          <a href="#itinerario" className="hover:text-cyan-300 transition">Itinerario</a>
+          <a href="/" className="hover:text-cyan-300 transition">Inicio</a>
+          <a href="#exhibitors" className="hover:text-cyan-300 transition">Expositores</a>
+          <a href="#band" className="hover:text-cyan-300 transition">Banda</a>
+          <a href="#itinerary" className="hover:text-cyan-300 transition">Itinerario</a>
         </div>
 
         {/* REDES SOCIALES */}
