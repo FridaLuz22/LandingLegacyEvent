@@ -1,54 +1,115 @@
 "use client";
-import React, { useState } from 'react';
+import ItineraryDay from "@/components/itinerary-day";
 
-export default function EventContent() {
-  const [activeTab, setActiveTab] = useState('dia1');
-  const itinerarios = {
-    dia1: [
-      { time: '08:00', activity: 'Bienvenida y registro' },
-      { time: '09:00', activity: 'Conferencia inaugural' },
-      { time: '11:00', activity: 'Descanso' },
-      { time: '11:30', activity: 'Talleres paralelos' },
-    ],
-    dia2: [
-      { time: '08:30', activity: 'Yoga matutino' },
-      { time: '09:30', activity: 'Sesión de networking' },
-      { time: '11:00', activity: 'Panel de discusión' },
-      { time: '13:00', activity: 'Almuerzo' },
-    ],
-    dia3: [
-      { time: '09:00', activity: 'Actividades finales' },
-      { time: '10:30', activity: 'Cierre y reflexiones' },
-      { time: '12:00', activity: 'Merienda de despedida' },
-    ],
-  };
-
+export default function Itinerary() {
   return (
-    <div className="p-6">
-      <div className="flex gap-4 mb-6 border-b">
-        {['dia1', 'dia2', 'dia3'].map((dia) => (
-          <button
-            key={dia}
-            onClick={() => setActiveTab(dia)}
-            className={`px-4 py-2 font-semibold ${
-              activeTab === dia
-                ? 'text-blue-600 border-b-2 border-blue-600'
-                : 'text-gray-600'
-            }`}
-          >
-            {dia.replace('dia', 'Día ')}
-          </button>
-        ))}
+    <section className="max-w-4xl mx-auto space-y-10">
+      <div className="text-center mb-8">
+        <h2 className="text-4xl font-bold tracking-wide text-white">
+          Itinerario Legacy
+        </h2>
+        <p className="text-gray-500 mt-2">
+          3 días de impacto
+        </p>
       </div>
 
-      <div className="space-y-4">
-        {itinerarios[activeTab as keyof typeof itinerarios].map((item, idx) => (
-          <div key={idx} className="flex gap-4 border-l-4 border-blue-500 pl-4">
-            <span className="font-bold text-blue-600 w-16">{item.time}</span>
-            <span className="text-gray-700">{item.activity}</span>
-          </div>
-        ))}
-      </div>
-    </div>
+      <div className="space-y-10"></div>
+      <ItineraryDay
+        dayNumber={1}
+        dayTitle="Día 1"
+        date="Jueves, 14 de Mayo"
+        events={[
+          {
+            time: "07:00 PM",
+            title: "Apertura",
+            description: "Inicio Conferencia Legacy",
+            type: "Conferencia",
+          },
+        ]}
+      />
+
+      <ItineraryDay
+        dayNumber={2}
+        dayTitle="Día 2"
+        date="Viernes, 15 de Mayo"
+        events={[
+          {
+            time: "08:00 AM",
+            title: "I Plenaria",
+            description: "Conferencia general",
+            type: "Conferencia",
+          },
+          {
+            time: "10:00 AM",
+            title: "II Plenaria",
+            description: "Conferencia general",
+            type: "Conferencia",
+          },
+          {
+            time: "12:00 PM",
+            title: "Panel 5 en 1",
+            description: "Conversatorio",
+            type: "Panel",
+          },
+          {
+            time: "04:00 PM",
+            title: "Apertura Concierto Barak",
+            description: "Mensaje principal",
+            type: "Concierto",
+          },
+          {
+            time: "06:30 PM",
+            title: "Previas Concierto",
+            description: "Detrás de escena",
+            type: "Concierto",
+          },
+          {
+            time: "08:00 PM",
+            title: "Concierto Barak",
+            description: "",
+            type: "Concierto",
+          },
+        ]}
+      />
+
+      <ItineraryDay
+        dayNumber={3}
+        dayTitle="Día 3"
+        date="Sábado, 16 de Mayo"
+        events={[
+          {
+            time: "08:30 AM",
+            title: "III Plenaria",
+            description: "Conferencia general",
+            type: "Conferencia",
+          },
+          {
+            time: "10:30 AM",
+            title: "IV Plenaria",
+            description: "Conferencia general",
+            type: "Conferencia",
+          },
+          {
+            time: "12:00 PM",
+            title: "Foro",
+            description: "Clausura de la conferencia",
+            type: "Foro",
+          },
+          {
+            time: "03:00 PM",
+            title: "Talleres",
+            description: "",
+            type: "Taller",
+          },
+          {
+            time: "07:30 PM",
+            title: "Cierre",
+            description: "Clausura de la conferencia",
+            type: "Clausura",
+          },
+        ]}
+      />
+
+    </section>
   );
 }

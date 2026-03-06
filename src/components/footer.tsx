@@ -1,69 +1,60 @@
 "use client";
-import React from 'react';
 
-export const Footer: React.FC = () => {
+export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-8">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
-            <p className="text-sm text-gray-400">
-              © 2024 Tu Empresa. Todos los derechos reservados.
-            </p>
-          </div>
+    <footer className="w-full bg-transparent text-white mt-20 border-t border-white/10">
+      <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col items-center gap-8">
 
-          <div className="flex gap-6">
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-400 transition"
-              aria-label="Facebook"
-            >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-              </svg>
-            </a>
-
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-300 transition"
-              aria-label="Twitter"
-            >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M23.953 4.57a10 10 0 002.856-3.915 10 10 0 01-2.866.79 5 5 0 00-8.593 4.55V4.5a10 10 0 00-4.453 8.97v.047a10 10 0 003.479 2.65 10 10 0 01-2.828-.796v.125a10 10 0 008.333 9.8c-.5.03-1.006.048-1.517.048a10 10 0 01-1.495-.11 10 10 0 009.332 6.946 20 20 0 01-6.183 2.13 20 20 0 01-1.5-.089A14 14 0 0024 11.67a10 10 0 00-.047-1.1z" />
-              </svg>
-            </a>
-
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-500 transition"
-              aria-label="LinkedIn"
-            >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z" />
-              </svg>
-            </a>
-
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-pink-400 transition"
-              aria-label="Instagram"
-            >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.015-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z" />
-                <path d="M5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.322a1.44 1.44 0 11.806 2.694 1.44 1.44 0 01-.806-2.694z" />
-              </svg>
-            </a>
-          </div>
+        {/* NAV LINKS */}
+        <div className="flex flex-wrap justify-center gap-6 text-sm tracking-wide">
+          <a href="#inicio" className="hover:text-cyan-300 transition">Inicio</a>
+          <a href="#expositores" className="hover:text-cyan-300 transition">Expositores</a>
+          <a href="#banda" className="hover:text-cyan-300 transition">Banda</a>
+          <a href="#itinerario" className="hover:text-cyan-300 transition">Itinerario</a>
         </div>
+
+        {/* REDES SOCIALES */}
+        <div className="flex gap-6">
+
+          {/* TIKTOK */}
+          <a href="https://www.tiktok.com/@casadediostingomaria?_r=1&_t=ZS-94SKvjpWwI1" className="hover:scale-110 transition" target="_blank">
+            <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16.5 2c.2 2.1 1.4 3.8 3.5 4.1v3.2c-1.3.1-2.6-.3-3.7-1v7.4c0 3.6-2.9 6.3-6.5 6.3S3.3 19.3 3.3 15.7s2.9-6.3 6.5-6.3c.4 0 .7 0 1 .1v3.3c-.3-.1-.6-.2-1-.2-1.8 0-3.2 1.4-3.2 3.1s1.4 3.1 3.2 3.1 3.2-1.4 3.2-3.1V2h3.5z"/>
+            </svg>
+          </a>
+
+          {/* FACEBOOK */}
+          <a href="https://www.facebook.com/CASADEDIOSTM" target="_blank" className="hover:scale-110 transition">
+            <svg className="w-6 h-6 text-[#1877F2]" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.018 4.388 11.013 10.125 11.927v-8.437H7.078V12.07h3.047V9.41c0-3.007 1.793-4.668 4.533-4.668 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.493h-2.796V24C19.612 23.086 24 18.09 24 12.073z"/>
+            </svg>
+          </a>
+
+          {/* INSTAGRAM */}
+          <a href="https://www.instagram.com/casadediostingomaria?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="hover:scale-110 transition" target="_blank">
+            <svg className="w-6 h-6 text-pink-500" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.2 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849s-.012 3.584-.069 4.849c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.849-.07c-3.26-.149-4.771-1.699-4.919-4.92C2.174 15.584 2.163 15.204 2.163 12s.013-3.583.07-4.849C2.382 3.924 3.897 2.382 7.152 2.234 8.418 2.175 8.796 2.163 12 2.163zm0 5.838A4 4 0 1012 16a4 4 0 000-8zm5.338-1.406a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/>
+            </svg>
+          </a>
+
+          {/* YOUTUBE */}
+          <a href="https://www.youtube.com/@CasadeDiosTingoMaria" className="hover:scale-110 transition" target="_blank">
+            <svg className="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.5 6.2s-.2-1.6-.8-2.3c-.8-.9-1.7-.9-2.1-1C17.6 2.6 12 2.6 12 2.6h0s-5.6 0-8.6.3c-.4.1-1.3.1-2.1 1C.7 4.6.5 6.2.5 6.2S0 8.1 0 10v2c0 1.9.5 3.8.5 3.8s.2 1.6.8 2.3c.8.9 1.9.9 2.4 1 1.7.2 8.3.3 8.3.3s5.6 0 8.6-.3c.4-.1 1.3-.1 2.1-1 .6-.7.8-2.3.8-2.3S24 13.9 24 12v-2c0-1.9-.5-3.8-.5-3.8zM9.7 14.6V7.8l6.5 3.4-6.5 3.4z"/>
+            </svg>
+          </a>
+
+        </div>
+
+        {/* COPYRIGHT */}
+        <div className="text-center text-sm text-gray-400">
+          <p>© 2026 Conference Legacy</p>
+          <p className="mt-1">
+            Hecho por <span className="text-white font-semibold">Casa de Dios</span>
+          </p>
+        </div>
+
       </div>
     </footer>
   );
-};
+}

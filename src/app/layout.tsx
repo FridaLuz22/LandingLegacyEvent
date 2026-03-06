@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { Layout } from "@/components";
+import { FixedPlugin } from "@/components/fixed-plugin";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -11,9 +12,9 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "NextJS Tailwind Event Landing Page",
+  title: "Legacy",
   description:
-    "Introducing Tailwind Event Landing Page, a dynamic and visually appealing landing page template designed using Tailwind CSS and Material Tailwind.",
+    "",
 };
 
 export default function RootLayout({
@@ -31,10 +32,10 @@ export default function RootLayout({
         ></script>
         <link rel="shortcut icon" href="/favicon.png" type="image/png" />
       </head>
-      <body className="min-h-screen bg-gradient-to-b from-[#01275D] via-[#01275D]/60 via-100% to-[#01275D]/60">
+      <body className="min-h-screen bg-gradient-to-b from-[#01275D] via-[#000000]/100 via-90% to-[#000000]/100">
         <Layout>
           {children}
-          {/* <FixedPlugin /> */}
+          <FixedPlugin />
         </Layout>
         <link
           rel="stylesheet"

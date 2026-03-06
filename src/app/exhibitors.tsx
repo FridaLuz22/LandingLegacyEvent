@@ -4,8 +4,6 @@ import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 
-
-
 interface Exhibitor {
   id: number;
   name: string;
