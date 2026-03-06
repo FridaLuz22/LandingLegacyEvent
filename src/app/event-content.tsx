@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 
 export default function EventContent() {
   const [activeTab, setActiveTab] = useState('dia1');
-
   const itinerarios = {
     dia1: [
       { time: '08:00', activity: 'Bienvenida y registro' },
