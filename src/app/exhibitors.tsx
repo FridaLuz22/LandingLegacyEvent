@@ -8,9 +8,9 @@ interface ExhibitorCard {
 }
 
 const exhibitors: ExhibitorCard[] = [
-  { id: 1, image: "/image/image10.png" },
-  { id: 2, image: "/image/image10.png" },
-  { id: 3, image: "/image/image10.png" },
+  { id: 1, image: "/image/image1.svg" },
+  { id: 2, image: "/image/image2.svg" },
+  { id: 3, image: "/image/image3.svg" },
 ];
 
 export default function Exhibitors() {
@@ -32,7 +32,11 @@ export default function Exhibitors() {
     <div className="w-full py-10 px-4">
 
       {/* MOBILE CAROUSEL */}
-      <div className="md:hidden relative flex items-center justify-center">
+      <div className="md:hidden">
+        <h2 className="text-xl font-heading font-bold tracking-widest text-center text-white mb-6">
+          SPEAKERS
+        </h2>
+        <div className="relative flex items-center justify-center">
 
         <button
           onClick={handlePrev}
@@ -56,6 +60,7 @@ export default function Exhibitors() {
               >
                 <img
                   src={card.image}
+                  alt=""
                   className={`rounded-lg transition-all duration-500 ${
                     index === currentIndex
                       ? "scale-100 opacity-100"
@@ -75,18 +80,31 @@ export default function Exhibitors() {
           <ChevronRight size={24} />
         </button>
 
+        </div>
       </div>
 
-      {/* DESKTOP GRID */}
-      <div className="hidden md:grid md:grid-cols-3 gap-6 mt-10">
-        {exhibitors.map((card) => (
-          <div key={card.id}>
-            <img
-              src={card.image}
-              className="w-full rounded-lg"
-            />
-          </div>
-        ))}
+      {/* DESKTOP - Título SPEAKERS + Imágenes con solapamiento */}
+      <div className="hidden md:block mt-10">
+        <h2 className="text-2xl md:text-3xl font-heading font-bold tracking-widest text-center text-white mb-8">
+          SPEAKERS
+        </h2>
+        <div className="flex justify-center items-end overflow-hidden">
+          {exhibitors.map((card, index) => {
+            const overlapClasses = ["z-10", "z-20 -ml-44", "z-30 -ml-44"][index];
+            return (
+            <div
+              key={card.id}
+              className={`relative ${overlapClasses} group cursor-pointer`}
+            >
+              <img
+                src={card.image}
+                alt=""
+                className="w-full max-w-[750px] rounded-lg shadow-lg transition-transform duration-300 ease-out group-hover:scale-105 group-hover:shadow-2xl"
+              />
+            </div>
+            );
+          })}
+        </div>
       </div>
 
     </div>

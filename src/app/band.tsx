@@ -6,13 +6,16 @@ export default function Band() {
   return (
     <div className="band-container">
       <div className="band-image-wrapper flex justify-center">
-        <Image
-          src="/image/barakband.png"
-          alt="Imagen de la banda"
-          width={800}
-          height={600}
-          priority
-        />
+        <div className="group cursor-pointer">
+          <Image
+            src="/image/barakband.png"
+            alt="Imagen de la banda"
+            width={800}
+            height={600}
+            priority
+            className="rounded-lg shadow-lg transition-transform duration-300 ease-out group-hover:scale-105 group-hover:shadow-2xl"
+          />
+        </div>
       </div>
       <style jsx>{`
         .band-container {

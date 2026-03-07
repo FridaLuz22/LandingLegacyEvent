@@ -3,17 +3,19 @@ import ItineraryDay from "@/components/itinerary-day";
 
 export default function Itinerary() {
   return (
-    <section className="max-w-4xl mx-auto space-y-10 mt-6">
-      <div className="text-center mb-8">
-        <h2 className="text-4xl font-bold tracking-wide text-white">
+    <section
+      id="itinerary-content"
+      className="max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-16 space-y-10 md:space-y-16"
+    >
+      <header className="text-center px-2">
+        <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-b from-[#e9f1f4] via-[#d9e6eb] to-[#2f7df6]">
           Itinerario Legacy
         </h2>
-        <p className="mt-2 font-bold text-lime-300">
+        <p className="mt-2 sm:mt-3 text-base sm:text-lg text-white/80 font-medium tracking-wider">
           3 días de impacto
         </p>
-      </div>
+      </header>
 
-      <div className="space-y-10"></div>
       <ItineraryDay
         dayNumber={1}
         dayTitle="Día 1"

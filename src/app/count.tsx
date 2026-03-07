@@ -42,7 +42,7 @@ export default function Countdown() {
   if (!timeLeft) return null;
 
   return (
-    <div className="flex items-center mt-9 py-4 px-8 justify-center border border-gray-400 rounded-3xl shadow-lg transition-transform duration-200 ease-out hover:scale-105 hover:shadow-xl">
+    <div className="flex items-center mt-9 py-4 px-8 justify-center backdrop-blur-md bg-white/10 border border-white/20 rounded-3xl shadow-xl transition-transform duration-200 ease-out hover:scale-105 hover:shadow-2xl">
       {["Días", "Horas", "Mins", "Segs"].map((label, i) => {
         const value = [
           timeLeft.days,
