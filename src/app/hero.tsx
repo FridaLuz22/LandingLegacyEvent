@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <main className="min-h-[80vh] md:min-h-[100vh] flex flex-col justify-center items-center w-full px-4 z-10 pb-20">
       <img src="/image/spiral.png" alt="" className="absolute right-0 top-[35px] md:top-0 max-w-[35%] md:max-w-[25%]"/>
-      <h2 className="font-heading text-[14px] md:text-[18px] tracking-[8px] font-medium text-white/90 text-center uppercase mt-2">
+      <h2 className="font-heading text-[14px] md:text-[18px] tracking-[8px] font-medium text-transparent bg-clip-text bg-gradient-to-b from-[#e9f1f4] via-[#d9e6eb] via-70% to-[#2f7df6] text-center uppercase mt-2">
         CONFERENCIA
       </h2>
       {/* TITLE */}

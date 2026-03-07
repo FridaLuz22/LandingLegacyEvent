@@ -14,21 +14,21 @@ interface Exhibitor {
 const exhibitors: Exhibitor[] = [
   {
     id: 1,
-    name: 'Exhibitor One',
-    description: 'Descripción del expositor',
-    image: '/images/exhibitor1.jpg',
+    name: 'Expositor 1',
+    description: 'Descripción del expositor 1',
+    image: '/image/p1.png',
   },
   {
     id: 2,
-    name: 'Exhibitor Two',
-    description: 'Descripción del expositor',
-    image: '/images/exhibitor2.jpg',
+    name: 'Expositor 2',
+    description: 'Descripción del expositor 2',
+    image: '/image/p2.png',
   },
   {
     id: 3,
-    name: 'Exhibitor Three',
-    description: 'Descripción del expositor',
-    image: '/images/exhibitor3.jpg',
+    name: 'Expositor 3',
+    description: 'Descripción del expositor 3',
+    image: '/image/p3.png',
   },
 ];
 
@@ -64,7 +64,7 @@ export default function Exhibitors() {
                 alt={exhibitors[currentIndex].name}
                 width={300}
                 height={300}
-                className="w-full h-64 object-cover"
+                className="w-full h-64 object-contain bg-black"
               />
               <div className="p-4">
                 <h3 className="text-lg font-semibold">
@@ -86,9 +86,9 @@ export default function Exhibitors() {
         </div>
 
         <div className="flex justify-center gap-2 mt-4">
-          {exhibitors.map((_, index) => (
+          {exhibitors.map((exhibitor, index) => (
             <button
-              key={index}
+              key={exhibitor.id}
               onClick={() => setCurrentIndex(index)}
               className={`w-2 h-2 rounded-full transition ${
                 index === currentIndex ? 'bg-blue-600' : 'bg-gray-300'
@@ -107,7 +107,7 @@ export default function Exhibitors() {
               alt={exhibitor.name}
               width={300}
               height={300}
-              className="w-full h-64 object-cover"
+              className="w-full h-64 object-contain bg-black"
             />
             <div className="p-4">
               <h3 className="text-lg font-semibold">{exhibitor.name}</h3>
