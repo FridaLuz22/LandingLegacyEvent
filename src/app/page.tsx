@@ -11,7 +11,9 @@ export default function Home() {
       <div className="relative text-white font-body overflow-x-hidden">
         <div className="">
           <Header />
-          <Hero />
+          <section id="hero">
+            <Hero />
+          </section>
         </div>
         <main className="relative">
           <section id="exhibitors">
@@ -26,12 +28,12 @@ export default function Home() {
         </main>
         <Footer />
         <img
-          src="/image/gradient.svg"
-          className="absolute md:max-w-[50%] max-w-[100%] top-[300px] md:top-[50px] left-0 -z-50 rotate-180"
+          src="/image/gradient-green.svg"
+          className="absolute md:max-w-[110%] max-w-[160%] top-[100px] md:-top-[30px] -left-[45%] md:-left-[40%] opacity-50 -z-50 rotate-180"
         />
         <img
           src="/image/gradient2.svg"
-          className="absolute md:max-w-[50%] max-w-[100%] top-[800px] rotate-90 left-0 -z-50"
+          className="absolute md:max-w-[50%] max-w-[100%] top-[800px] -right-[20%] md:-right-[15%] rotate-[270deg] -z-50"
         />
         <img
           src="/image/gradient.svg"

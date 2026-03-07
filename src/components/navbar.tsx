@@ -1,19 +1,196 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
+
+const NAV_LINKS = [
+  { label: "Inicio", href: "#hero" },
+  { label: "Expositores", href: "#exhibitors" },
+  { label: "Banda", href: "#band" },
+  { label: "Itinerario", href: "#itinerary" },
+  { label: "Contacto", href: "#contact" },
+];
+
+const SECTION_IDS = ["hero", "exhibitors", "band", "itinerary", "contact"];
+
+function scrollToSection(href: string) {
+  if (href === "#hero" || href === "/") {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    return;
+  }
+  const id = href.slice(1);
+  const el = document.getElementById(id);
+  if (el) {
+    const offset = 72;
+    const top = el.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: "smooth" });
+  }
+}
+
 export default function Header() {
+  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  /* ── Scroll: fondo y visibilidad ── */
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 20);
+      setVisible(y < lastScrollY.current || y < 80);
+      lastScrollY.current = y;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  /* ── IntersectionObserver: sección activa ── */
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+    SECTION_IDS.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id);
+        },
+        { rootMargin: "-40% 0px -55% 0px" }
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
+
+  /* ── Cierre de menú al redimensionar ── */
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 768) setMenuOpen(false);
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   return (
-    <header className="w-full px-6 pt-8 pb-4 flex flex-col items-center relative">
+    <header
+      className={[
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        scrolled
+          ? "bg-[#060d1f]/75 backdrop-blur-xl border-b border-white/[0.06] shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+          : "bg-transparent",
+        visible ? "translate-y-0" : "-translate-y-full",
+      ].join(" ")}
+    >
+      <div className="max-w-6xl mx-auto px-5 md:px-8 h-[68px] flex items-center justify-between">
 
-      <nav className="w-full">
-        <ul className="flex justify-center items-center gap-x-4 md:gap-x-8 gap-y-2 text-sm font-medium text-white tracking-[1px]">
-          <li><a className="hover:text-cyan-300 transition-colors" href="/">Inicio</a></li>
-          <li><a className="hover:text-cyan-300 transition-colors" href="#exhibitors">Expositores</a></li>
-          <li><img src="/logos/logocdd.png" alt="Legacy Logo" className="max-w-[30px] h-auto block mix-blend-screen opacity-90"/></li>
-          <li><a className="hover:text-cyan-300 transition-colors" href="#band">Banda</a></li>
-          <li><a className="hover:text-cyan-300 transition-colors" href="#itinerary">Itinerario</a></li>
-        </ul>
-      </nav>
+        {/* ── Logo ── */}
+        <button
+          onClick={() => scrollToSection("#hero")}
+          className="flex items-center gap-2.5 group shrink-0"
+          aria-label="Ir al inicio"
+        >
+          <img
+            src="/logos/logocdd.png"
+            alt="Casa de Dios"
+            className="w-8 h-8 object-contain mix-blend-screen opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+          />
+          <span className="font-heading font-black text-[15px] tracking-[0.2em] uppercase text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 group-hover:to-white transition-all duration-300">
+            Casa de Dios
+          </span>
+        </button>
 
+        {/* ── Nav Desktop ── */}
+        <nav className="hidden md:flex items-center gap-1">
+          {NAV_LINKS.map(({ label, href }) => {
+            const id = href.replace("#", "") || "hero";
+            const isActive = activeSection === id;
+            return (
+              <button
+                key={href}
+                onClick={() => scrollToSection(href)}
+                className={[
+                  "relative px-4 py-2 text-[12.5px] font-medium tracking-[0.12em] uppercase rounded-md transition-all duration-300",
+                  "hover:text-white",
+                  isActive
+                    ? "text-white"
+                    : "text-white/50 hover:text-white/90",
+                ].join(" ")}
+              >
+                {isActive && (
+                  <span className="absolute inset-0 rounded-md bg-white/[0.06] border border-white/[0.08]" />
+                )}
+                <span className="relative">{label}</span>
+                {isActive && (
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-[1.5px] bg-[#2f7df6] rounded-full shadow-[0_0_6px_rgba(47,125,246,0.8)]" />
+                )}
+              </button>
+            );
+          })}
+
+        </nav>
+
+        {/* ── Hamburger ── */}
+        <button
+          onClick={() => setMenuOpen((v) => !v)}
+          className="md:hidden relative w-9 h-9 flex flex-col items-center justify-center gap-[5px] group"
+          aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+        >
+          <span
+            className={[
+              "w-5 h-[1.5px] bg-white/80 rounded-full transition-all duration-300 origin-center",
+              menuOpen ? "rotate-45 translate-y-[6.5px]" : "",
+            ].join(" ")}
+          />
+          <span
+            className={[
+              "w-5 h-[1.5px] bg-white/80 rounded-full transition-all duration-300",
+              menuOpen ? "opacity-0 scale-x-0" : "",
+            ].join(" ")}
+          />
+          <span
+            className={[
+              "w-5 h-[1.5px] bg-white/80 rounded-full transition-all duration-300 origin-center",
+              menuOpen ? "-rotate-45 -translate-y-[6.5px]" : "",
+            ].join(" ")}
+          />
+        </button>
+      </div>
+
+      {/* ── Menú Mobile ── */}
+      <div
+        className={[
+          "md:hidden overflow-hidden transition-all duration-400 ease-in-out",
+          menuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0",
+        ].join(" ")}
+      >
+        <div className="bg-[#060d1f]/90 backdrop-blur-xl border-t border-white/[0.06] px-5 pt-3 pb-5 flex flex-col gap-1">
+          {NAV_LINKS.map(({ label, href }) => {
+            const id = href.replace("#", "") || "hero";
+            const isActive = activeSection === id;
+            return (
+              <button
+                key={href}
+                onClick={() => {
+                  scrollToSection(href);
+                  setMenuOpen(false);
+                }}
+                className={[
+                  "w-full text-left px-4 py-3 rounded-lg text-[13px] font-medium tracking-[0.1em] uppercase transition-all duration-200 flex items-center gap-3",
+                  isActive
+                    ? "text-white bg-white/[0.07] border border-white/[0.08]"
+                    : "text-white/50 hover:text-white/80 hover:bg-white/[0.04]",
+                ].join(" ")}
+              >
+                {isActive && (
+                  <span className="w-1 h-1 rounded-full bg-[#2f7df6] shadow-[0_0_6px_rgba(47,125,246,1)]" />
+                )}
+                {label}
+              </button>
+            );
+          })}
+        </div>
+      </div>
     </header>
   );
 }

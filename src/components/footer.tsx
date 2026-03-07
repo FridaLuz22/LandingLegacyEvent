@@ -4,7 +4,7 @@ import { FaWhatsapp, FaFacebook, FaInstagram, FaTiktok, FaYoutube } from "react-
 
 export default function Footer() {
   return (
-    <footer className="w-full text-white mt-24 px-6 mt-20 border-t border-white/10">
+    <footer id="contact" className="w-full text-white mt-24 px-6 mt-20 border-t border-white/10 scroll-mt-8">
       {/* CONTENIDO */}
       <div className="max-w-[80%] mt-10 mx-auto flex flex-col gap-9 md:flex-row justify-between text-center md:text-left">
 

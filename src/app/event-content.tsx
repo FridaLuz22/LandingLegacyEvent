@@ -14,6 +14,16 @@ export default function Itinerary() {
         <p className="mt-2 sm:mt-3 text-base sm:text-lg text-white/80 font-medium tracking-wider">
           3 días de impacto
         </p>
+        <a
+          href="/itinerario-legacy.pdf"
+          download="itinerario-legacy.pdf"
+          className="inline-flex items-center gap-2 mt-4 sm:mt-5 px-5 py-2.5 rounded-xl bg-white/10 border border-white/20 text-cyan-200 font-medium text-sm sm:text-base hover:bg-white/20 hover:border-cyan-400/50 hover:text-cyan-100 transition-all duration-300"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          Descargar itinerario (PDF)
+        </a>
       </header>
 
       <ItineraryDay
