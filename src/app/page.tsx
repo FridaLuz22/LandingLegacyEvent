@@ -26,12 +26,16 @@ export default function Home() {
         </main>
         <Footer />
         <img
-          src="/image/gradient.png"
-          className="absolute md:max-w-[50%] max-w-[100%] bottom-0 right-0 -z-50"
+          src="/image/gradient.svg"
+          className="absolute md:max-w-[50%] max-w-[100%] top-[300px] md:top-[50px] left-0 -z-50 rotate-180"
         />
         <img
-          src="/image/gradient2.png"
-          className="absolute md:max-w-[50%] max-w-[100%] top-[800px] left-0 rotate-180 -z-50"
+          src="/image/gradient2.svg"
+          className="absolute md:max-w-[50%] max-w-[100%] top-[800px] rotate-90 left-0 -z-50"
+        />
+        <img
+          src="/image/gradient.svg"
+          className="absolute md:max-w-[50%] max-w-[100%] bottom-0 right-0 -z-50"
         />
       </div>
     </>

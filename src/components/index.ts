@@ -4,3 +4,5 @@ export * from "./footer";
 export * from "./layout";
 export * from "./itinerary-day";
 export * from "./fixed-plugin";
+export * from "./spiral";
+export * from "./cube";

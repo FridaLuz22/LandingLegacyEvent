@@ -3,12 +3,12 @@ import ItineraryDay from "@/components/itinerary-day";
 
 export default function Itinerary() {
   return (
-    <section className="max-w-4xl mx-auto space-y-10">
+    <section className="max-w-4xl mx-auto space-y-10 mt-6">
       <div className="text-center mb-8">
         <h2 className="text-4xl font-bold tracking-wide text-white">
           Itinerario Legacy
         </h2>
-        <p className="text-gray-500 mt-2">
+        <p className="mt-2 font-bold text-lime-300">
           3 días de impacto
         </p>
       </div>
@@ -54,7 +54,7 @@ export default function Itinerary() {
           {
             time: "04:00 PM",
             title: "Apertura Concierto Barak",
-            description: "Mensaje principal",
+            description: "",
             type: "Concierto",
           },
           {

@@ -1,11 +1,18 @@
 "use client";
 
+import Spiral from "@/components/spiral";
 import Countdown from "./count";
+import Cube from "@/components/cube";
 
 export default function Hero() {
   return (
-    <main className="min-h-[80vh] md:min-h-[100vh] flex flex-col justify-center items-center w-full px-4 z-10 pb-20">
-      <img src="/image/spiral.png" alt="" className="absolute right-0 top-[35px] md:top-0 max-w-[35%] md:max-w-[25%]"/>
+    <main className="min-h-[80vh] relative md:min-h-[100vh] flex flex-col justify-center items-center w-full px-4 z-10 pb-20">
+      <img src="/image/spiral.png" alt="" className="absolute right-0 top-[25px] md:top-0 max-w-[35%] md:max-w-[25%]"/>
+      
+      {/* <Spiral className="absolute right-0 top-0 max-w-[35%] opacity-40" /> */}
+      <Cube className="top-[80vh] left-[45vw]" />
+      <Cube className="top-[40vh] left-[25vw] [animation-delay:2s]" />
+      <Cube className="top-[50vh] left-[75vw] [animation-delay:4s]" />
       <h2 className="font-heading text-[14px] md:text-[18px] tracking-[8px] font-medium text-transparent bg-clip-text bg-gradient-to-b from-[#e9f1f4] via-[#d9e6eb] via-70% to-[#2f7df6] text-center uppercase mt-2">
         CONFERENCIA
       </h2>

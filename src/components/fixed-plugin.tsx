@@ -1,7 +1,7 @@
 "use client";
 
 export function FixedPlugin() {
-  const phone = "+51987502487"; // tu número con código país (Perú = 51)
+  const phone = "+51933401503"; // tu número con código país (Perú = 51)
   const message = "Hola, quiero más información sobre la conferencia Legacy";
 
   const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;

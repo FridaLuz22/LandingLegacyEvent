@@ -16,11 +16,11 @@ export default function Band() {
       </div>
       <style jsx>{`
         .band-container {
-          padding: 2rem;
+          padding: 1rem;
           text-align: center;
         }
         .band-image-wrapper {
-          margin-top: 2rem;
+          
         }
         .band-image-inner {
           overflow: visible;
