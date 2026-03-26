@@ -1,68 +1,71 @@
 "use client";
 
+import SpeakerCard from "@/components/speakerCard";
+
 interface ExhibitorCard {
   id: number;
   image: string;
+  name: string;
+  description: string;
 }
 
 const exhibitors: ExhibitorCard[] = [
-  { id: 1, image: "/image/image1.svg" },
-  { id: 2, image: "/image/image2.svg" },
-  { id: 3, image: "/image/image3.svg" },
+  {
+    id: 1,
+    image: "/image/image1.svg",
+    name: "Jhonatan Boulanger (PERÚ)",
+    description: "Un líder apasionado por formar generaciones firmes en identidad.",
+  },
+  {
+    id: 2,
+    image: "/image/image2.svg",
+    name: "Carlos Escobar (ESPAÑA)",
+    description: "Un pastor de convicción que inspira a vivir el evangelio con poder.",
+  },
+  {
+    id: 3,
+    image: "/image/image3.svg",
+    name: "Daniel Páez (COLOMBIA)",
+    description: "Impulsa a los jóvenes a vivir encendidos por el espíritu santo.",
+  },
 ];
 
 export default function Exhibitors() {
   return (
-    <div className="w-full py-10 px-4">
+    <div className="w-full py-10 px-4 bg-gradient-to-br from-purple-50 to-blue-50">
 
-      {/* MOBILE - Speakers en vertical */}
-      <div className="md:hidden">
-        <h2 className="text-xl font-heading font-bold tracking-widest text-center text-white mb-2">
-          SPEAKERS
-        </h2>
-        <p className="text-sm text-white/80 text-center max-w-xl mx-auto mb-6">
-          Voces inspiradoras que compartirán su fe y experiencias para fortalecer tu camino espiritual.
-        </p>
-        <div className="flex flex-col items-center gap-6">
-          {exhibitors.map((card) => (
-            <div key={card.id} className="w-full max-w-xs flex justify-center">
-              <img
-                src={card.image}
-                alt=""
-                className="w-full rounded-lg shadow-lg"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* Título */}
+      <h2 className="text-3xl md:text-4xl font-bold text-center text-[#01204C] mb-4">
+        Speakers Nacionales e Internacionales
+      </h2>
 
-      {/* DESKTOP - Título SPEAKERS + Imágenes con solapamiento */}
-      <div className="hidden md:block mt-10">
-        <h2 className="text-2xl md:text-3xl font-heading font-bold tracking-widest text-center text-white mb-2">
-          SPEAKERS
-        </h2>
-        <p className="text-sm md:text-base text-white/80 text-center max-w-2xl mx-auto mb-8">
-          Voces inspiradoras que compartirán su fe y experiencias para fortalecer tu camino espiritual.
-        </p>
-        <div className="flex justify-center items-end overflow-hidden">
-          {exhibitors.map((card, index) => {
-            const overlapClasses = ["z-10", "z-20 -ml-44", "z-30 -ml-44"][index];
-            return (
+      <p className="text-sm md:text-base text-black/80 text-center max-w-2xl mx-auto mb-8">
+        Voces inspiradoras que compartirán su fe y experiencias para fortalecer tu camino espiritual.
+      </p>
+
+      {/* GRID + Responsive overlap */}
+      <div
+        className="
+           flex 
+          flex-col md:flex-row 
+          justify-center 
+          items-center
+          gap-6 md:gap-[66px]6px]
+        "
+      >
+        {exhibitors.map((card, index) => {
+          // const overlap = ["md:z-10", "md:z-20 md:-ml-44", "md:z-30 md:-ml-44"][index];
+
+          return (
             <div
+              className="transition-all duration-300 hover:shadow-xl hover:shadow-black/20 rounded-2xl"
               key={card.id}
-              className={`relative ${overlapClasses} group cursor-pointer`}
             >
-              <img
-                src={card.image}
-                alt=""
-                className="w-full max-w-[750px] rounded-lg shadow-lg transition-transform duration-300 ease-out group-hover:scale-105 group-hover:shadow-2xl"
-              />
+              <SpeakerCard {...card} />
             </div>
-            );
-          })}
-        </div>
+          );
+        })}
       </div>
-
     </div>
   );
 }

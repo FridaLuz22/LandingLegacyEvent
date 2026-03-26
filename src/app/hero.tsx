@@ -1,73 +1,119 @@
 "use client";
 
 import Countdown from "./count";
-import Cube from "@/components/cube";
 
 export default function Hero() {
   return (
-    <main className="min-h-screen relative pt-[68px] py-16 md:py-24 flex flex-col justify-center items-center w-full px-4 z-10 pb-14 md:pb-20">
-      {/* Decoración de fondo */}
+    <section className="relative w-full min-h-[88vh] md:min-h-screen flex flex-col items-center justify-center text-white overflow-hidden pt-[40px] md:pt-[70px]">
+
       <img
-        src="/image/spiral.png"
-        alt=""
-        className="absolute right-0 top-[25px] md:top-0 max-w-[35%] md:max-w-[25%] opacity-90 pointer-events-none select-none"
-        aria-hidden
-      />
-      <div
-        className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20 pointer-events-none"
-        aria-hidden
+        src="/image/hero_mob.png"
+        alt="Hero Mobile"
+        className="block md:hidden absolute inset-0 w-full h-full object-cover opacity-70"
       />
 
-      <Cube className="top-[80vh] left-[45vw]" />
-      <Cube className="top-[40vh] left-[25vw] [animation-delay:2s]" />
-      <Cube className="top-[50vh] left-[75vw] [animation-delay:4s]" />
+      <img
+        src="/image/hero_web.png"
+        alt="Hero Desktop"
+        className="hidden md:block absolute inset-0 w-full h-full object-cover opacity-70"
+      />
 
-      {/* Subtítulo */}
-      <div className="flex flex-col items-center gap-2 mb-2 md:mb-3">
-        <span className="inline-block w-8 h-px bg-gradient-to-r from-transparent via-[#2f7df6]/80 to-transparent rounded-full" />
-        <h2 className="font-heading text-[13px] md:text-[17px] tracking-[0.35em] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#e9f1f4] via-[#d9e6eb] via-70% to-[#2f7df6] text-center uppercase">
-          Conferencia
+      <div className="absolute inset-0 bg-black/55"></div>
+
+      <div className="absolute top-[5%] left-[-25%] w-[90vw] h-[90vw] bg-[#2f7df6]/50 blur-[120px] rounded-full opacity-40 md:blur-[160px]"></div>
+      <div className="absolute bottom-[-10%] right-[-20%] w-[75vw] h-[75vw] bg-purple-500/55 blur-[120px] rounded-full opacity-40 md:blur-[160px]"></div>
+
+      <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-3xl">
+        
+        <h2 className="tracking-[0.30em] uppercase font-semibold text-[10px] text-white/70 md:text-sm leading-[1.4]">
+          Conferencia Internacional
         </h2>
-        <p className="text-[11px] md:text-[13px] tracking-[0.25em] text-white/70 font-medium uppercase">
+
+        <p className="mt-4 text-[11px] md:text-sm uppercase tracking-[0.28em] text-white/90 leading-[1.5]">
           Adolescentes · Jóvenes · Hijos de Pastores
         </p>
-      </div>
-
-      {/* Título principal */}
-      <div className="relative text-center">
-        <h1
-          className="font-heading text-[20vw] sm:text-[18vw] md:text-[11vw] font-black uppercase leading-[0.85] tracking-[-0.02em] text-transparent bg-clip-text bg-gradient-to-b from-[#e9f1f4] via-[#d9e6eb] via-65% to-[#2f7df6] drop-shadow-[0_4px_30px_rgba(47,125,246,0.25)] [text-shadow:0_0_60px_rgba(47,125,246,0.15)]"
-          style={{ WebkitTextStroke: "1px rgba(255,255,255,0.06)" }}
+        
+        <h1 
+          className="
+            font-heading 
+            text-[22vw] sm:text-[18vw] md:text-[11vw]
+            font-black uppercase 
+            leading-[0.8] 
+            tracking-[-0.02em]
+            text-transparent bg-clip-text bg-white
+          "
+          style={{ WebkitTextStroke: '1.5px rgba(255,255,255,0.20)' }}
         >
           LEGACY
         </h1>
 
-        {/* Versículo */}
-        <div className="flex justify-center mt-3 md:mt-4">
-          <div className="transform hover:rotate-0 hover:scale-[1.02] transition-all duration-300 -rotate-[3deg] inline-block">
-            <span className="relative block bg-white text-[#0a1628] font-heading font-extrabold text-[0.85rem] md:text-[1.15rem] px-6 py-2.5 md:px-8 md:py-3 rounded-sm shadow-[0_8px_24px_rgba(0,0,0,0.4),0_0_0_1px_rgba(255,255,255,0.1)_inset] border border-white/20">
-              Zacarías 4:6
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* Fecha y lugar */}
-      <div className="mt-8 md:mt-10 flex flex-col items-center gap-3 text-center max-w-md">
-        <p className="text-white/90 font-medium text-sm md:text-base tracking-wide">
-          14, 15 y 16 de mayo
+        <p className="mt-4 md:mt-4 text-base text-white/90 leading-[1.4] md:leading-tight max-w-sm md:text-xl">
+          Una conferencia diseñada para equipar, inspirar y llevarte a un nuevo nivel.
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-white/80 text-sm">
-          <span className="font-semibold text-white/95">Casa de Dios</span>
-          <span className="text-white/50">·</span>
-          <span>Av. Amazonas 1006, Tingo María — Perú</span>
-        </div>
-      </div>
 
-      {/* Countdown */}
-      <div className="mt-8 md:mt-10 w-full max-w-2xl">
-        <Countdown />
+        <p className="
+          mt-4 
+          text-lg md:text-3xl
+          font-extrabold 
+          tracking-[0.20em]
+          text-[#2f7df6]
+          drop-shadow-[0_0_25px_rgba(47,125,246,0.9)]
+        ">
+          14 · 15 · 16 de Mayo
+        </p>
+
+        <p className="
+          mt-1 
+          text-xs md:text-base 
+          uppercase 
+          tracking-[0.18em]
+          text-white/85 
+          font-semibold
+        ">
+          Casa de Dios · Av. Amazonas 1006, Tingo María — Perú
+        </p>
+
+
+        <button
+          className="
+            mt-6 
+            px-8 py-3 
+            rounded-full
+            font-semibold 
+            tracking-wide 
+            uppercase
+            text-white
+
+            /* MODO MOBILE (activo siempre) */
+            bg-[#2f7df6]/30
+            border-[#2f7df6]/40
+            shadow-[0_0_35px_rgba(47,125,246,0.8)]
+            scale-[1.05]
+
+            /* MODO DESKTOP (restaura lo normal) */
+            md:bg-white/10
+            md:border-white/20
+            md:shadow-[0_8px_25px_rgba(255,255,255,0.25)]
+            md:scale-100
+
+            /* Hover DESKTOP */
+            md:hover:bg-[#2f7df6]/30
+            md:hover:border-[#2f7df6]/40
+            md:hover:shadow-[0_0_35px_rgba(47,125,246,0.8)]
+            md:hover:scale-[1.05]
+
+            backdrop-blur-md 
+            transition-all duration-300
+          "
+        >
+          Comprar Entrada
+        </button>
+
+        <div className="mt-8 md:mt-10 w-full max-w-2xl">
+          <Countdown />
+        </div>
+
       </div>
-    </main>
+    </section>
   );
 }

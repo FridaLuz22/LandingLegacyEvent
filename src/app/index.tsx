@@ -5,5 +5,7 @@ export * from "./page";
 export * from "./exhibitors";
 export * from "./event-content";
 export * from "./band";
+export * from "./choreography";
+export * from "./ourConference";
 
 

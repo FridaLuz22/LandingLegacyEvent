@@ -32,7 +32,7 @@ export default function RootLayout({
         ></script>
         <link rel="shortcut icon" href="/favicon.png" type="image/png" />
       </head>
-      <body className="min-h-screen bg-gradient-to-b from-[#01275D] via-[#000000]/100 via-90% to-[#000000]/100">
+      <body className="min-h-screen bg-gradient-to-b from-[#D8D9DA] via-[#D8D9DA]/100 via-90% to-[#D8D9DA]/100">
         <Layout>
           {children}
           <FixedPlugin />

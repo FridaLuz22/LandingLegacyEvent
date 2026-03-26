@@ -7,10 +7,10 @@ export default function Band() {
     <div className="band-container">
       <div className="band-image-wrapper flex flex-col justify-center items-center gap-4">
         <div className="text-center space-y-2">
-          <h2 className="font-heading text-xl md:text-2xl font-bold tracking-[0.2em] uppercase text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-[#01204C] mb-4">
             Desde República Dominicana
           </h2>
-          <p className="text-sm md:text-base text-white/80 max-w-xl">
+          <p className="text-sm md:text-base text-black/80 max-w-xl">
             Una banda con raíces caribeñas que fusiona la fe y la música para llevar un mensaje de esperanza y adoración desde el corazón de la isla.
           </p>
         </div>

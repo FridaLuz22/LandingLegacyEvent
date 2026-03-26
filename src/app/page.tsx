@@ -4,6 +4,8 @@ import Exhibitors from "./exhibitors";
 import EventContent from "./event-content";
 import Band from "./band";
 import Footer from "@/components/footer";
+import Choreography from "./choreography";
+import OurConference from "./ourConference";
 
 export default function Home() {
   return (
@@ -19,26 +21,24 @@ export default function Home() {
           <section id="exhibitors">
             <Exhibitors />
           </section>
-           <section id="band">
+
+          <section id="band">
             <Band />
           </section>
+
+          <section id="choreography">
+            <Choreography />
+          </section>
+
           <section id="itinerary">
             <EventContent />
           </section>
+          
+          <section id="our-conference">
+            <OurConference />
+          </section>
         </main>
         <Footer />
-        <img
-          src="/image/gradient-green.svg"
-          className="absolute md:max-w-[110%] max-w-[160%] top-[100px] md:-top-[30px] -left-[45%] md:-left-[40%] opacity-50 -z-50 rotate-180"
-        />
-        <img
-          src="/image/gradient2.svg"
-          className="absolute md:max-w-[50%] max-w-[100%] top-[800px] -right-[20%] md:-right-[15%] rotate-[270deg] -z-50"
-        />
-        <img
-          src="/image/gradient.svg"
-          className="absolute md:max-w-[50%] max-w-[100%] bottom-0 right-0 -z-50"
-        />
       </div>
     </>
   );

@@ -6,11 +6,13 @@ const NAV_LINKS = [
   { label: "Inicio", href: "#hero" },
   { label: "Expositores", href: "#exhibitors" },
   { label: "Banda", href: "#band" },
+  { label: "Coreografia", href: "#choreography" },
   { label: "Itinerario", href: "#itinerary" },
+  { label: "Conferencia", href: "#our-conference" },
   { label: "Contacto", href: "#contact" },
 ];
 
-const SECTION_IDS = ["hero", "exhibitors", "band", "itinerary", "contact"];
+const SECTION_IDS = ["hero", "exhibitors", "band", "choreography", "itinerary", "our-conference" ,"contact"];
 
 function scrollToSection(href: string) {
   if (href === "#hero" || href === "/") {
@@ -30,7 +32,6 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
   const [menuOpen, setMenuOpen] = useState(false);
-  const [visible, setVisible] = useState(true);
   const lastScrollY = useRef(0);
 
   /* ── Scroll: fondo y visibilidad ── */
@@ -38,7 +39,6 @@ export default function Header() {
     const onScroll = () => {
       const y = window.scrollY;
       setScrolled(y > 20);
-      setVisible(y < lastScrollY.current || y < 80);
       lastScrollY.current = y;
     };
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -75,11 +75,10 @@ export default function Header() {
   return (
     <header
       className={[
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b-2 border-b-#707275",
         scrolled
-          ? "bg-[#060d1f]/75 backdrop-blur-xl border-b border-white/[0.06] shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+          ? "bg-[#D8D9DA]/85 backdrop-blur-xl border-b border-white/[0.06] shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
           : "bg-transparent",
-        visible ? "translate-y-0" : "-translate-y-full",
       ].join(" ")}
     >
       <div className="max-w-6xl mx-auto px-5 md:px-8 h-[68px] flex items-center justify-between">
@@ -110,20 +109,13 @@ export default function Header() {
                 key={href}
                 onClick={() => scrollToSection(href)}
                 className={[
-                  "relative px-4 py-2 text-[12.5px] font-medium tracking-[0.12em] uppercase rounded-md transition-all duration-300",
-                  "hover:text-white",
+                  "relative px-4 py-2 text-[12.5px] uppercase rounded-md transition-all duration-300 font-bold",
                   isActive
-                    ? "text-white"
-                    : "text-white/50 hover:text-white/90",
+                    ? "text-black border border-[#024BB1] bg-[#2f7df6]/10 shadow-[0_0_6px_rgba(47,125,246,0.6)]"
+                    : "text-black/50 hover:text-black hover:border hover:border-[#2f7df6]/60 hover:bg-[#2f7df6]/5",
                 ].join(" ")}
               >
-                {isActive && (
-                  <span className="absolute inset-0 rounded-md bg-white/[0.06] border border-white/[0.08]" />
-                )}
-                <span className="relative">{label}</span>
-                {isActive && (
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-[1.5px] bg-[#2f7df6] rounded-full shadow-[0_0_6px_rgba(47,125,246,0.8)]" />
-                )}
+                {label}
               </button>
             );
           })}

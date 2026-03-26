@@ -6,3 +6,5 @@ export * from "./itinerary-day";
 export * from "./fixed-plugin";
 export * from "./spiral";
 export * from "./cube";
+export * from "./speakerCard";
+export * from "./tabDays";
