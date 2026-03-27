@@ -7,18 +7,26 @@ export default function Itinerary() {
   const [activeDay, setActiveDay] = useState(1);
 
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-16 space-y-10 md:space-y-16 ">
-
+    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-16 space-y-5 md:space-y-7">
       <header className="text-center px-2">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-[#01204C] mb-4">
           Itinerario Legacy
         </h2>
-        <p className="mt-2 text-base sm:text-lg text-black/80 font-medium tracking-wider">
+        <p className="mt-2 text-sm md:text-lg text-black/80 font-medium tracking-wider">
           3 días de impacto
         </p>
       </header>
 
       <TabsDays active={activeDay} setActive={setActiveDay} />
+      <div className="flex justify-end">
+      <button
+            onClick={() => window.open("/itinerario-legacy.pdf", "_blank")}
+            className=" px-2 md:px-8 py-2 bg-transparent border border-black text-black font-semibold rounded-full transition-all duration-200  sm:w-auto text-sm
+            hover:shadow-lg hover:border-[#01204C] hover:text-[#01204C] active:scale-95disabled:bg-gray-400 disabled:text-gray-700 disabled:border-gray-400 disabled:shadow-none"
+          >
+            Descargar Itinerario
+      </button>
+      </div>
 
       {activeDay === 1 && (
         <ItineraryDay

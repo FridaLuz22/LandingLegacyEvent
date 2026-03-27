@@ -37,7 +37,7 @@ export default function ItineraryDay({
       
       <div className="flex gap-6">
         <div className="flex flex-col items-center shrink-0">
-          <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-[#024BB1] to-[#067A34] text-white font-bold shadow-lg">
+          <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-[#0260E3] to-[#067A34]/50 text-white font-bold shadow-lg">
             {dayNumber}
           </div>
 

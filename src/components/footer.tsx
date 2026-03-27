@@ -10,7 +10,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#01204C] text-white pt-12 relative">
+    <footer className="w-full bg-[#01357E] text-white pt-12 relative">
       {/* BARRA SUPERIOR DE REDES */}
       <div className="flex flex-col md:flex-row">
       <div className="flex flex-col items-center gap-5">

@@ -39,7 +39,7 @@ export default function Exhibitors() {
         Speakers Nacionales e Internacionales
       </h2>
 
-      <p className="text-sm md:text-base text-black/80 text-center max-w-2xl mx-auto mb-8">
+      <p className="mt-2 text-sm md:text-lg text-black/80 font-medium tracking-wider max-w-2xl mx-auto mb-8 text-center">
         Voces inspiradoras que compartirán su fe y experiencias para fortalecer tu camino espiritual.
       </p>
 

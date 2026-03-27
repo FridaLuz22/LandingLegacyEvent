@@ -37,7 +37,7 @@ export default function TabsDays({ active, setActive }: TabsDaysProps) {
                 font-medium
                 ${
                   isActive
-                    ? "bg-gradient-to-br from-[#024BB1] to-[#067A34] text-white shadow-lg scale-105"
+                    ? "bg-gradient-to-br from-[#0260E3] to-[#067A34]/50 text-white shadow-lg scale-105"
                     : "text-[#0C0D0D]/70 hover:text-[#01204C] hover:bg-[#01204C]/5"
                 }
               `}

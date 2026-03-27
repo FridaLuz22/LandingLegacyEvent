@@ -34,7 +34,7 @@ export default function Choreography() {
         </h1>
 
         {/* Descripción */}
-        <p className="text-center text-gray-600 text-base md:text-lg mb-8 leading-relaxed">
+        <p className="text-center mt-2 text-sm md:text-lg text-black/80 font-medium tracking-wider md:text-lg mb-8 leading-relaxed">
           Descarga las bases de música y envía tu video de coreografía.
           Asegúrate de seguir todas las instrucciones y requisitos antes de
           enviar.
@@ -53,7 +53,7 @@ export default function Choreography() {
 
           <button
             onClick={handleSubmitVideo}
-            className="px-6 md:px-8 py-3 bg-gradient-to-br from-[#024BB1] to-[#067A34] text-white font-semibold rounded-full transition duration-200 w-full sm:w-auto hover:shadow-lg"
+            className="px-6 md:px-8 py-3 bg-gradient-to-br from-[#0260E3] to-[#067A34]/50 text-white font-semibold rounded-full transition duration-200 w-full sm:w-auto hover:shadow-lg"
           >
             {isSubmitting ? "Enviando..." : "Enviar Video"}
           </button>

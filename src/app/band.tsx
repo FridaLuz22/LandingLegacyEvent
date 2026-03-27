@@ -5,12 +5,12 @@ import Image from "next/image";
 export default function Band() {
   return (
     <div className="band-container">
-      <div className="band-image-wrapper flex flex-col justify-center items-center gap-4">
+      <div className="band-image-wrapper flex flex-col justify-center items-center gap-2">
         <div className="text-center space-y-2">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-[#01204C] mb-4">
             Desde República Dominicana
           </h2>
-          <p className="text-sm md:text-base text-black/80 max-w-xl">
+          <p className="mt-2 text-sm md:text-lg text-black/80 font-medium tracking-wider max-w-2xl">
             Una banda con raíces caribeñas que fusiona la fe y la música para llevar un mensaje de esperanza y adoración desde el corazón de la isla.
           </p>
         </div>
