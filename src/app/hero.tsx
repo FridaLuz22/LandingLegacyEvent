@@ -7,13 +7,13 @@ export default function Hero() {
     <section className="relative w-full min-h-[88vh] md:min-h-screen flex flex-col items-center justify-center text-white overflow-hidden pt-[40px] md:pt-[70px]">
 
       <img
-        src="/image/hero_mob.png"
+        src="/image/hero_mob.webp"
         alt="Hero Mobile"
         className="block md:hidden absolute inset-0 w-full h-full object-cover opacity-70"
       />
 
       <img
-        src="/image/hero_web.png"
+        src="/image/hero_web.webp"
         alt="Hero Desktop"
         className="hidden md:block absolute inset-0 w-full h-full object-cover opacity-70"
       />

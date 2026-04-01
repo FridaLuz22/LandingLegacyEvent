@@ -23,7 +23,7 @@ export default function Band() {
             aria-hidden
           />
           <Image
-            src="/image/barakband.png"
+            src="/image/barakband.webp"
             alt="Imagen de la banda"
             width={800}
             height={600}
